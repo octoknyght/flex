@@ -575,6 +575,10 @@ video {
   flex-grow: 1;
 }
 
+.flex-col {
+  flex-direction: column;
+}
+
 .border {
   border-width: 1px;
 }
