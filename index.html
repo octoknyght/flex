@@ -3,11 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/dist/output.css" rel="stylesheet">
+  <link href="./dist/output.css" rel="stylesheet">
 </head>
 <body>
   <!--
-    01.
+    01. flex (display:flex)
+      a. add a class of flex to #banner
+        - this allows us to use the different flex properties (e.g. flex-1, flex-col, flex-basis, grow, ...) within this element
+      b. add a height of 96px and background color of gray-100 to #banner
+        - this allows us to easily visualize the banner as we style
+    
+    Don't forget to run 
+    'npx tailwindcss -i ./src/input.css -o ./dist/output.css' or
+    'npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch'
   -->
   <div id="banner">
     <div id="cover"></div>
