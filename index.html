@@ -7,16 +7,18 @@
 </head>
 <body>
   <!--
-    02. flex-col (flex-direction: column)
-      a. add a class of flex-col to our #banner
-        - this will position flex items vertically
-        - the default flex-direction is row
-    
+    03. Details Layout
+      #Let's add the base layout for the details section
+      a. add divs for the left and right side of #details, we'll name them #left and #right respectively
+      b. add background colors of orange-100 and yellow-100 to #left and #right respectively
+      c. try refreshing the browser and see if you can spot the changes
+        - if you didn't see any changes, then you correctly followed everything : )
+
     Don't forget to run 
     'npx tailwindcss -i ./src/input.css -o ./dist/output.css' or
     'npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch'
   -->
-  <div id="banner" class="flex h-96 bg-gray-100">
+  <div id="banner" class="flex flex-col h-96 bg-gray-100">
     <div id="cover" class="flex-1 bg-blue-100"></div>
     <div id="details" class="flex-1 bg-red-100"></div>
   </div>
