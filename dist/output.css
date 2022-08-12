@@ -567,8 +567,16 @@ video {
   flex: 1 1 0%;
 }
 
+.shrink {
+  flex-shrink: 1;
+}
+
 .grow {
   flex-grow: 1;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .bg-gray-500 {

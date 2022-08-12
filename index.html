@@ -7,17 +7,19 @@
 </head>
 <body>
   <!--
-    01. flex (display:flex)
-      a. add a class of flex to #banner
-        - this allows us to use the different flex properties (e.g. flex-1, flex-col, flex-basis, grow, ...) within this element
-      b. add a height of 96px and background color of gray-100 to #banner
-        - this allows us to easily visualize the banner as we style
+    02. flex-1 (display:flex)
+      a. add a class of flex-1 to both #cover and #details
+        - this allows flex items (#cover and #details) to grow and shrink as needed, ignoring their initial size
+        - since there are 2 flex items, they will now share the parent's height and width (#banner) giving them 50% each
+      b. add a background color of blue-100 to cover and red-100 to details
+        - TIP 1: using lighter colors are better when experimenting since they're easier on the eyes
+        - TIP 2: using background colors are better than borders since border sizes affects the element's size
     
     Don't forget to run 
     'npx tailwindcss -i ./src/input.css -o ./dist/output.css' or
     'npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch'
   -->
-  <div id="banner">
+  <div id="banner" class="flex h-96 bg-gray-100">
     <div id="cover"></div>
     <div id="details"></div>
   </div>
