@@ -7,20 +7,27 @@
 </head>
 <body>
   <!--
-    03. Details Layout
-      #Let's add the base layout for the details section
-      a. add divs for the left and right side of #details, we'll name them #left and #right respectively
-      b. add background colors of orange-100 and yellow-100 to #left and #right respectively
-      c. try refreshing the browser and see if you can spot the changes
-        - if you didn't see any changes, then you correctly followed everything : )
+    03. More Flexes 💪
+      #You didn't see any changes on the last exercise since we didn't set any width and height for the #left and #right elements
+      #We'll use flex for that so they can occupy their parent's size, and responsively grow and shrink as needed
 
-    Don't forget to run 
-    'npx tailwindcss -i ./src/input.css -o ./dist/output.css' or
-    'npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch'
+      a. add flex class to #details
+        - like the #banner, this will allow #details to have its own flex items
+      b. add flex-1 to both #left and #right
+        - they now share the #details width and height
+      c. add flex-col to #details
+        - this will now correctly stack elements vertically, 
+          following the layout we wanted on tiny mobile screens
+        - but this also displays on larger screens so let's handle that next
+      d. add sm:flex-row 
+        - this will now stack elements horizontally on sm, md, lg, xl, ...        
   -->
   <div id="banner" class="flex flex-col h-96 bg-gray-100">
     <div id="cover" class="flex-1 bg-blue-100"></div>
-    <div id="details" class="flex-1 bg-red-100"></div>
+    <div id="details" class="flex-1 bg-red-100">
+      <div id="left" class="bg-orange-100">left</div>
+      <div id="right" class="bg-yellow-100">right</div>
+    </div>
   </div>
 </body>
 </html>
