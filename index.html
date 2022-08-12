@@ -7,23 +7,57 @@
 </head>
 <body>
   <!--
-    04. Flex Grow (flex-grow: 1)
-      # Right now, #left and #right are the same size on large screens
-      # We need #left to be larger than #right
+    05. The avatar
+      # This is a element is positioned dynamically
+      # To correctly position this element, we will need to know 
+        when and why it changes the position and 
+        what element it really follows
+      # the 4 possible elements where the avatar is contained are #cover, #details, #left, and #right
+      # observation 1
+          avatar - on the left side
+          screen - wide
+          #cover - screen's full width
+          #details - screen's full width
+          #left - half / less than the screen's full width, equal to or larger than #right
+          #right - half / less than the screen's full width, equal to or smaller than #left
+      # observation 2
+          avatar - on the center (changed)
+          screen - small (changed)
+          #cover - screen's full width (no changes)
+          #details - screen's full width (no changes)
+          #left - screen's full width (changed)
+          #right - screen's full width (changed)
+      # conclusion
+          we can now eliminate most of the possible elements where the avatar is contained
+          by first eliminating the elements that didn't change
+          We can safely eliminate #cover and #details among them
+          We can also eliminate #right since the avatar is inclined to go left of #left on wide screens
+          
+          NOTE that we can still use #cover, #details, and #right to achieve this
+            But it just makes more sense to use #left since it will also contain
+            the User's name, User's Company, User's Location
+            Now we can add avatar and treat them as one element, so we can move them together anywhere
+
+      a. let's create a div for the avatar inside #left
+        - give it and id of avatar
+        - a height and width of 32
+        - a background green 100
+        - a rounded-full border
       
-      a. add sm:w-96 to both #left and #right
-        - there will be a screen size where they will have the same width, so we needed to account for that
-      b. remove flex-1 on both #left and right
-        - we will be using grow
-      c. add grow to #left
-        - grow: allows a flex item to grow to fill any available space
-        - Unlike flex-1 it doesn't ignore the current width and it doesn't allow the element
+      b. add position relative to #left
+      c. Let's position the avatar on the center first
+        - add position absolute to #avatar
+        - add margin auto
+        - add inset-x-0 (shorthand for left-0 and right-0)
+        - add -top-16, this is half of the avatars height, and will position it 16 pixels above from the top of #left
+      d. Let's position it to the left on wider screens
+        - add sm:right-auto, since we already set left-0 via inset-x-0 (left-0, right-0), we just need to remove right-0 or bring it back to auto on larger screens
   -->
   <div id="banner" class="flex flex-col h-96 bg-gray-100">
     <div id="cover" class="flex-1 bg-blue-100"></div>
     <div id="details" class="flex flex-col flex-1 bg-red-100 sm:flex-row">
-      <div id="left" class="flex-1 bg-orange-100">left</div>
-      <div id="right" class="flex-1 bg-yellow-100">right</div>
+      <div id="left" class="bg-orange-100 sm:w-96 grow">left</div>
+      <div id="right" class="bg-yellow-100 sm:w-96">right</div>
     </div>
   </div>
 </body>
